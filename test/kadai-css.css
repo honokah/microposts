@@ -1,0 +1,24 @@
+@charset"UTF-8";
+header.これはヘッダー{ background-color: pink; }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+div#main {
+  width: 700px;
+  background-color: #ddffdd;
+   float: left;
+}
+  
+nav#menu{
+  width: 300px;
+  background-color: #ddddff;
+   float: right;
+}
+footer{
+    background-color: #ffddff;}
+
+

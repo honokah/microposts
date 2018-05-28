@@ -1,0 +1,118 @@
+@charset"UTF-8";
+
+h2 {
+    background: #fff;
+    font-size: 50px;
+    padding: 8px 22px;
+    border-radius: 30px;
+    border: 3px solid #956840;
+    text-align: center;
+}
+
+h3 {
+    background: #fff;
+    font-size: 35px;
+    padding: 8px 22px;
+    border-radius: 30px;
+    border: 3px solid #956840;
+    text-align: center;
+    letter-spacing: 10
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    margin :80;
+    font-weight: bold
+   }
+   
+#pay {
+    text-align: center;
+}
+   
+#smartphone{
+    margin-left: 100px;
+    display: block;
+    width: 300px;
+    float: left;
+}
+
+#merit{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 0;
+    font-size: 35px;
+    font-weight: bold;
+    list-style-type: none;
+    padding-bottom: 300px;
+    height: 100px;
+    width: 700px;
+    float: left;
+}
+
+#wrapper{
+    height:300px;
+    margin: 0;
+    padding: 0;
+}
+.clearfix::after{clear: both;
+content:'' ;
+display: block;
+}
+
+#panda{
+    text-align: left;}
+
+#shop{
+    text-align: center;
+    
+}
+
+#link{
+    text-align: center;
+    font-weight:bold;
+    font-size: 30px;
+    color: #956840;
+    
+}
+
+a:visited {
+    color: #333;
+}
+
+a:hover {
+    color: red;
+    font-weight: 700;
+    text-decoration: none;
+ 
+}
+
+#use{
+    text-align: left;
+    font-size: 50px;
+    margin-right: 90px;
+}
+
+.balloon1-left{
+    background-image: url('fukidashi.png');
+    font-size: 18px;
+    width: 495px;
+    height: 140px;
+    float: left;
+}
+
+.pandaimage{
+    float:left;
+    width:500px;
+}
+
+.panda{
+    width:1200px;
+    height: 500px;
+}
+
+.message{
+    width: 495px;
+    height: 100px;
+    line-height: 100px;
+}

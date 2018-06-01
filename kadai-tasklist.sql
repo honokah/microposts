@@ -1,0 +1,6 @@
+CREATE TABLE kadaitasklist.laravel (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    task VARCHAR(100),
+    content VARCHAR(100),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,43 @@
+<?php
+   
+
+$question = array();
+$question = array('楽天カフェ','希望ヶ丘','NYのルーフトップ','TKの部屋');
+
+$answer = $question[02];
+shuffle($question);
+
+
+$question = $_POST['question']; 
+$answer = $_POST['answer'];   
+ 
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>タイトル</title>
+    </head>
+    <body>
+        <h1>Douki クイズ made by honoka</h1>
+
+        <h2>Question 1：アリーの好きな場所は？</h2>
+
+        <form action="./answer.php" method='post'>
+           <input type="radio" name="question" value="<?php echo $question[0]; ?>" /> <?php echo $question[0]; ?>楽天カフェ<br>
+           <input type="radio" name="question" value="<?php echo $question[1]; ?>" /> <?php echo $question[1]; ?>希望ヶ丘<br>
+           <input type="radio" name="question" value="<?php echo $question[2]; ?>" /> <?php echo $question[2]; ?>NYのルーフトップ<br>
+           <input type="radio" name="question" value="<?php echo $question[3]; ?>" /> <?php echo $question[3]; ?>TKの部屋<br>
+           <input type="hidden" name="answer" value="<?php echo $answer ?>">
+           <input type="submit" value="これが正解なはず">
+        </form>
+　　　　<h2>クイズの結果</h2>
+　　　　<p>こたえは.....<?php echo $result ;?></p>
+    </body>
+</html>
+
+

@@ -37,7 +37,16 @@
                     {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
-                @endif
+                
+                 
+                    
+                    {!! Form::open(['route' => ['sushi.like', $micropost->id], 'method' => 'post']) !!}
+                        {!! Form::submit('Like', ['class' => 'btn btn-danger btn-xs']) !!}
+                    {!! Form::close() !!}
+
+                    
+               @endif
+               
             </div>
         </div>
     </li>

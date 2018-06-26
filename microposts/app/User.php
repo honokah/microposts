@@ -101,36 +101,32 @@ public function feed_microposts()
         return $this->belongsToMany(Micropost::class, 'user_favorite', 'user_id', 'micropost_id')->withTimestamps();
     }
 
-
-
-public function like($micropostId)
+public function like($sukiId)
 {
     // confirm if already following
-    $exist = $this->is_liking($micropostId);
-    // confirming that it is not you
-    $its_me = $this->id == $micropostId;
+    $exist = $this->is_liking($sukiId);
+    
+    
 
-    if ($exist || $its_me) {
+    if ($exist) {
         // do nothing if already following
         return false;
     } else {
         // follow if not following
-        $this->favorite()->attach($micropostId);
+        $this->favorite()->attach($sukiId);
         return true;
     }
 }
 
-public function unlike($micropostId)
+public function unlike($sukiId)
 {
     // confirming if already following
-    $exist = $this->is_liking($micropostId);
-    // confirming that it is not you
-    $its_me = $this->id == $micropostId;
+    $exist = $this->is_liking($sukiId);
+    
 
-
-    if ($exist && !$its_me) {
+    if ($exist) {
         // stop following if following
-        $this->favorite()->detachd($micropostId);
+        $this->favorite()->detach($sukiId);
         return true;
     } else {
         // do nothing if not following
@@ -139,12 +135,18 @@ public function unlike($micropostId)
 }
 
 
-public function is_liking($micropostId) {
-    return $this->favorite()->where('micropost_id', $micropostId)->exists();
+public function is_liking($sukiId) {
+    return $this->favorite()->where('micropost_id', $sukiId)->exists();
 }
-    
-    
-    
+
+
+
+
+
+
+
+
+
     
     
     

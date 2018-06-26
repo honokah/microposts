@@ -26,15 +26,23 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
         Route::get('followings', 'UsersController@followings')->name('users.followings');
         Route::get('followers', 'UsersController@followers')->name('users.followers');
-        
-        Route::post('like', 'UserFavoriteController@store')->name('sushi.like');
-        Route::delete('unfollow', 'UserFavoriteController@destroy')->name('sushi.unlike');
-        Route::get('favorite', 'UsersController@favorite')->name('users.favorite');
     });
+
     Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
 });
- 
 
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('like', 'UserFavoriteController@store')->name('sushi.like');
+        Route::delete('unlike', 'UserFavoriteController@destroy')->name('sushi.unlike');
+        Route::get('favorite', 'UsersController@favorite')->name('sushi.favorite');
+       
+    });
+
+    Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
+});
  
  
     

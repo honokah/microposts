@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class UserFavoriteController extends Controller
 {
-    public function store(Request $request, $id)
+    
+     public function store(Request $request, $id)
     {
+        
         \Auth::user()->like($id);
         return redirect()->back();
     }
@@ -17,5 +19,6 @@ class UserFavoriteController extends Controller
         \Auth::user()->unlike($id);
         return redirect()->back();
     }
-    
 }
+
+
